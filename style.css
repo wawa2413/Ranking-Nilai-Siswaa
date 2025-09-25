@@ -1,0 +1,386 @@
+    /* Reset & Gaya Dasar */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            /* Gaya untuk seluruh halaman */
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            /* Kontainer utama aplikasi */
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+        }
+
+    /* Gaya Header */
+        .header {
+            /* Header aplikasi */
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+
+        .header h1 {
+            font-size: 2.2em;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+    /* Area Konten */
+        .content {
+            /* Konten utama aplikasi */
+            padding: 30px;
+        }
+
+    /* Bagian Formulir Input */
+        .form-section {
+            /* Formulir input data siswa */
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            border: 1px solid #e9ecef;
+        }
+
+        .form-title {
+            font-size: 1.3em;
+            font-weight: 600;
+            color: #495057;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 15px;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        label {
+            font-weight: 500;
+            color: #495057;
+        }
+
+        input, select {
+            padding: 10px 12px;
+            border: 2px solid #dee2e6;
+            border-radius: 6px;
+            font-size: 14px;
+            transition: border-color 0.2s;
+        }
+
+        input:focus, select:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+    /* Grid Input Siswa */
+        .students-grid {
+            /* Grid untuk input siswa */
+            display: grid;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .student-row {
+            /* Baris input siswa */
+            display: grid;
+            grid-template-columns: 30px 1fr 120px 100px 80px;
+            gap: 10px;
+            align-items: center;
+            padding: 12px;
+            background: white;
+            border-radius: 8px;
+            border: 1px solid #e9ecef;
+        }
+
+        .student-number {
+            font-weight: 600;
+            color: #6c757d;
+            text-align: center;
+        }
+
+        .student-row input {
+            margin: 0;
+        }
+
+        .remove-btn {
+            /* Tombol hapus siswa */
+            background: #dc3545;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 12px;
+            transition: background-color 0.2s;
+        }
+
+        .remove-btn:hover {
+            background: #c82333;
+        }
+
+    /* Gaya Tombol */
+        .btn {
+            /* Tombol utama */
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.2s;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .btn:hover {
+            background: #5a6fd8;
+            transform: translateY(-1px);
+        }
+
+        .btn-secondary {
+            background: #6c757d;
+        }
+
+        .btn-secondary:hover {
+            background: #545b62;
+        }
+
+        .btn-success {
+            background: #28a745;
+        }
+
+        .btn-success:hover {
+            background: #218838;
+        }
+
+    /* Bagian Hasil Ranking */
+        .results {
+            /* Kontainer hasil ranking */
+            margin-top: 30px;
+        }
+
+        .results-grid {
+            display: grid;
+            gap: 25px;
+        }
+
+        .result-card {
+            background: white;
+            border: 1px solid #e9ecef;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .card-header {
+            background: #f8f9fa;
+            padding: 15px 20px;
+            border-bottom: 1px solid #e9ecef;
+            font-weight: 600;
+            color: #495057;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+    /* Gaya Tabel Ranking */
+        .ranking-table {
+            /* Tabel ranking siswa */
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        .ranking-table th,
+        .ranking-table td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .ranking-table th {
+            background: #667eea;
+            color: white;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 13px;
+            letter-spacing: 0.5px;
+        }
+
+        .ranking-table tr:hover {
+            background: #f8f9fa;
+        }
+
+        .rank-badge {
+            /* Lencana peringkat */
+            background: #28a745;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            min-width: 24px;
+            text-align: center;
+            display: inline-block;
+        }
+
+        .rank-badge.gold {
+            background: #ffc107;
+            color: #212529;
+        }
+
+        .rank-badge.silver {
+            background: #6c757d;
+        }
+
+        .rank-badge.bronze {
+            background: #fd7e14;
+        }
+
+    /* Kartu Statistik Nilai */
+        .stats-grid {
+            /* Grid statistik nilai */
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 2.2em;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 0.9em;
+            opacity: 0.9;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+    /* Bagian Pencarian Siswa */
+        .search-section {
+            /* Kontainer pencarian siswa */
+            background: #e3f2fd;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #2196f3;
+        }
+
+        .search-row {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            margin-top: 15px;
+        }
+
+        .search-result {
+            margin-top: 15px;
+            padding: 15px;
+            border-radius: 8px;
+            font-weight: 500;
+        }
+
+        .search-result.found {
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+        }
+
+        .search-result.not-found {
+            background: #f8d7da;
+            border: 1px solid #f5c6cb;
+            color: #721c24;
+        }
+
+    /* Kelas Utility */
+        .hidden {
+            /* Untuk menyembunyikan elemen */
+            display: none;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .mb-20 {
+            margin-bottom: 20px;
+        }
+
+    /* Desain Responsif */
+        @media (max-width: 768px) {
+            .content {
+                padding: 20px;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 8px;
+            }
+
+            .student-row {
+                grid-template-columns: 1fr;
+                gap: 8px;
+                text-align: left;
+            }
+
+            .student-number {
+                text-align: left;
+            }
+
+            .search-row {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .ranking-table {
+                font-size: 14px;
+            }
+
+            .ranking-table th,
+            .ranking-table td {
+                padding: 8px 10px;
+            }
+        }

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="id">
+<head></head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ranking Nilai Siswa - Insertion Sort</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- ===== STRUKTUR UTAMA HALAMAN ===== -->
+    <div class="container">
+        <!-- Bagian Judul -->
+        <div class="header">
+            <!-- Judul utama aplikasi -->
+            <h1>📊 Ranking Nilai Siswa</h1>
+            <p>Sistem Peringkat menggunakan Algoritma Insertion Sort</p>
+        </div>
+
+        <!-- Bagian Konten -->
+        <div class="content">
+            <!-- Formulir Input Data -->
+            <div class="form-section">
+                <!-- Judul form input data siswa -->
+                <div class="form-title">
+                    📝 Input Data Siswa
+                </div>
+
+                <!-- Input jumlah siswa -->
+                <div class="form-row">
+                    <label for="studentCount">Jumlah Siswa:</label>
+                    <div style="display: flex; gap: 10px; align-items: center;">
+                        <input type="number" id="studentCount" min="1" max="100" value="10">
+                        <button class="btn btn-secondary" onclick="updateStudentInputs()">Update</button>
+                        <button class="btn btn-success" onclick="loadSampleData()">Data Contoh</button>
+                    </div>
+                </div>
+
+                <!-- Pilihan urutan ranking siswa -->
+                <div class="form-row">
+                    <label for="sortOrder">Urutan Ranking:</label>
+                    <select id="sortOrder">
+                        <option value="desc">Tertinggi ke Terendah (Descending)</option>
+                        <option value="asc">Terendah ke Tertinggi (Ascending)</option>
+                    </select>
+                </div>
+
+                <!-- Grid input data siswa yang akan di-generate oleh JavaScript -->
+                <div id="studentsGrid" class="students-grid">
+                    <!-- Input data siswa akan dibuat otomatis lewat JS -->
+                </div>
+
+                <!-- Tombol untuk memproses ranking siswa -->
+                <div style="margin-top: 25px; text-align: center;">
+                    <button class="btn" onclick="processRanking()">🚀 Proses Ranking</button>
+                </div>
+            </div>
+
+            <!-- Bagian Hasil Ranking -->
+            <div id="resultsSection" class="results hidden">
+                <div class="results-grid">
+                    
+                    <!-- Tabel ranking siswa -->
+                    <div class="result-card">
+                        <div class="card-header">
+                            🏆 Tabel Ranking Siswa
+                        </div>
+                        <div class="card-body">
+                            <div style="overflow-x: auto;">
+                                <table class="ranking-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Peringkat</th>
+                                            <th>Nama Siswa</th>
+                                            <th>Kelas</th>
+                                            <th>Nilai</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="isiTabelRanking"></tbody>
+                                 <tbody id="rankingTableBody"></tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Statistik nilai siswa -->
+                    <div class="result-card">
+                        <div class="card-header">
+                            📈 Statistik Nilai
+                        </div>
+                        <div class="card-body">
+                            <div class="stats-grid">
+                                <div class="stat-card">
+                                    <div id="avgScore" class="stat-value">0</div>
+                                    <div class="stat-label">Rata-rata</div>
+                                </div>
+                                <div class="stat-card">
+                                    <div id="maxScore" class="stat-value">0</div>
+                                    <div class="stat-label">Tertinggi</div>
+                                </div>
+                                <div class="stat-card">
+                                    <div id="minScore" class="stat-value">0</div>
+                                    <div class="stat-label">Terendah</div>
+                                </div>
+                                <div class="stat-card">
+                                    <div id="totalStudents" class="stat-value">0</div>
+                                    <div class="stat-label">Total Siswa</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pencarian peringkat siswa berdasarkan nama -->
+                    <div class="result-card">
+                        <div class="card-header">
+                            🔍 Cari Peringkat Siswa
+                        </div>
+                        <div class="card-body">
+                            <div class="search-section">
+                                <label for="searchName">Masukkan nama siswa untuk mencari peringkatnya:</label>
+                                <div class="search-row">
+                                    <input type="text" id="searchName" placeholder="Contoh: Ahmad Budi" style="flex: 1;">
+                                    <button class="btn" onclick="searchStudent()">Cari</button>
+                                    <button class="btn btn-secondary" onclick="clearSearch()">Clear</button>
+                                </div>
+                                <div id="searchResult"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- menghubungkan ke file JavaScript -->
+    <script src="Script.js"></script>
+</body>
+</html>
